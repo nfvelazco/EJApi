@@ -1,0 +1,68 @@
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ejemplo</title>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+    <style>
+        img.banco {
+            width: 683px;
+            height: 320px;
+            position:absolute;
+            top: 0px;
+            left:0px;
+        }
+
+        img.botonApi {
+            position: absolute;
+            top: 250px;
+            left: 270px;
+            width: 160px;
+            height: 190px;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            var timeIn = 1000;
+            var timeOut = 100;
+            $('#btnTransform').click(function () {
+                $("#btnTransform").fadeOut(1100);
+
+                setTimeout(function () {
+                    $('#img1').remove();
+                }, timeOut + 2000);
+                $('#img2').fadeIn(timeIn, function () {
+                    setTimeout(function () {
+                        $('#img2').remove();
+                    }, timeOut + 200);
+                });
+                setTimeout(function () {
+                    $('#img3').fadeIn(timeIn, function () {
+                        $('#img3').fadeOut(500)
+                    });
+                }, timeOut + 400);
+                setTimeout(function () {
+                    $('#img4').fadeIn(timeIn, function () { });
+                    $('#btnWelcome').fadeIn(500, function () {
+                    });
+                }, 800);
+
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+    <img class="banco" id="img1" src="Img/bancoViejo.png" />
+    <img class="banco"id="img2" style="display:none;" src="Img/bancoViejo1.png" />
+    <img class="banco" id="img3" style="display:none;" src="Img/bancoNuevo1.png" />
+    <img class="banco" id="img4" style="display:none;" src="Img/bancoNuevo.png" />
+   
+    <img class="botonApi" style="cursor:pointer" id="btnTransform" src="Img/APIBUTTONTransform.png" />
+    <img class="botonApi" id="btnWelcome" style="display:none;"src="Img/APIBUTTONWelcome.png" />
+</body>
+</html>
